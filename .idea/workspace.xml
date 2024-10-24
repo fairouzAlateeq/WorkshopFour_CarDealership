@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f8d48f6-3615-4fc7-90a0-26ebdf3cb9b6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ps/DealershipFileManager.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../workbook-2/LoopExercises/src/main/java/com/ps/Dice.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../workbook-2/LoopExercises/src/main/java/com/ps/DoWhileLoop.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../workbook-2/LoopExercises/src/main/java/com/ps/ForLoop.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../workbook-2/LoopExercises/src/main/java/com/ps/WhileLoop.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../workbook-2/SimpleClass/src/main/java/com/ps/CellPhone.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../workbook-2/WeekOne_review/src/main/java/com/ps/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ps/Dealership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ps/Dealership.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ps/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ps/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ps/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ps/Vehicle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WorkshopOne_FinancialCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WorkshopOne_FinancialCalculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WorkshopOne_FinancialCalculator/src/main/java/com/ps/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../WorkshopOne_FinancialCalculator/src/main/java/com/ps/Main.java" afterDir="false" />
     </list>
@@ -46,6 +51,11 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fairo\OneDrive\Desktop\Yearup courses\Java\java-development\workshops\WorkshopFour_CarDealership" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

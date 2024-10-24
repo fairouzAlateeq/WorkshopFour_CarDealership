@@ -15,13 +15,48 @@ public class Dealership {
         this.phone = phone;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public void getVehicleByPrice(double minPrice, double maxPrice){
+        for(Vehicle vehicle : inventory){
+            if(vehicle.getPrice()>minPrice && vehicle.getPrice()>maxPrice)
+                System.out.println(vehicle);
+
+        }
 
     }
     public void getVehicleByMakeModel(String make, String model){
-
+        for(Vehicle vehicle : inventory) {
+            if(make.equalsIgnoreCase(vehicle.getMake()) && model.equalsIgnoreCase(vehicle.getModel()))
+                System.out.println(vehicle);
+        }
     }
     public void getVehicleByYear(int minYear, int maxYear){
+        for(Vehicle vehicle :inventory)
+            if(vehicle.getYear()>minYear && vehicle.getYear()<maxYear)
+                System.out.println(vehicle);
 
     }
     public void getVehicleByColor(String color){
