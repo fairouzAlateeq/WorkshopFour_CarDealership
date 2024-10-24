@@ -75,10 +75,14 @@ public class Dealership {
     }
 
     public void getVehicleByType(String vehicleType){
-
+        for(Vehicle vehicle :inventory)
+            if(vehicle.getVehicleType().equalsIgnoreCase(vehicleType))
+                System.out.println(vehicle);
     }
 
     public void getAllVehicles(){
+        for(Vehicle vehicle :inventory)
+            System.out.println(vehicle);
 
     }
 
