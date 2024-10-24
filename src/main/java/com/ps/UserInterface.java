@@ -55,7 +55,17 @@ public class UserInterface {
                         dealership.getVehicleByYear(year1, year2);
                         break;
                     case 4:
+                        System.out.println("What color are you looking for? ");
+                        String col = inputScanner.nextLine();
+                        dealership.getVehicleByColor(col);
+                        break;
                     case 5:
+                        System.out.println("min Milage: ");
+                        int minMilage = inputScanner.nextInt();
+                        System.out.println("max Milage");
+                        int maxMilage = inputScanner.nextInt();
+                        dealership.getVehicleByMilage(minMilage,maxMilage);
+                        break;
                     case 6:
                     case 7:
                     case 8:

@@ -60,10 +60,17 @@ public class Dealership {
 
     }
     public void getVehicleByColor(String color){
+        for(Vehicle vehicle :inventory)
+            if(color.equalsIgnoreCase(vehicle.getColor()))
+                System.out.println(vehicle);
+
 
     }
 
     public void getVehicleByMilage(int minMile, int maxMile){
+        for(Vehicle vehicle :inventory)
+            if(minMile>vehicle.getOdometer() && maxMile<vehicle.getOdometer())
+                System.out.println(vehicle);
 
     }
 
