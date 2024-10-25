@@ -81,7 +81,7 @@ public class Dealership {
 
     public void getAllVehicles(){
         for(Vehicle vehicle :inventory)
-            System.out.println(vehicle.toString()); // check to see if its returning the actual values or memo location
+            System.out.println(vehicle); // check to see if its returning the actual values or memo location
 
     }
 
