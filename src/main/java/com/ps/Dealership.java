@@ -91,8 +91,10 @@ public class Dealership {
 
     }
 
-    public void removeVehicle(Vehicle vehicle){
-        inventory.remove(vehicle);
+    public void removeVehicle(int vin){
+        for(Vehicle vehicle :inventory)
+            if(vehicle.getVin() == vin)
+                inventory.remove(vehicle);
 
     }
 

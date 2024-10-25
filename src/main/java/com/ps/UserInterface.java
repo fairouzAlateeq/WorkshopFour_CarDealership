@@ -91,12 +91,20 @@ public class UserInterface {
                          int odometer = inputScanner.nextInt();
                         System.out.println("price: ");
                          double price = inputScanner.nextDouble();
+                         Vehicle newVehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+                         dealership.addVehicle(newVehicle);
                          break;
                     case 9:
+                        System.out.println("whats the vehicle's vin number? ");
+                        int vinToRemove =inputScanner.nextInt();
+                        dealership.removeVehicle(vinToRemove);
+                        break;
+                    case 99:
+                        System.out.println("See you next time! ");
+                        break;
                     default:
-
+                        System.out.println("commands are from 1-9 and 99 to quit");
                 }
-
             }
             while (command != 99);
 
