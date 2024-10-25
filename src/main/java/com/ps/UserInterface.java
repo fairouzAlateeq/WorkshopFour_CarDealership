@@ -42,10 +42,10 @@ public class UserInterface {
                         break;
                     case 2:
                         System.out.println("whats the make? ");
-                        String make = inputScanner.nextLine();
+                        String carMake = inputScanner.nextLine();
                         System.out.println("model? ");
-                        String model = inputScanner.nextLine();
-                        dealership.getVehicleByMakeModel(make, model);
+                        String carModel = inputScanner.nextLine();
+                        dealership.getVehicleByMakeModel(carMake, carModel);
                         break;
                     case 3:
                         System.out.println("enter your min year: ");
@@ -67,8 +67,31 @@ public class UserInterface {
                         dealership.getVehicleByMilage(minMilage,maxMilage);
                         break;
                     case 6:
+                        System.out.println("What type od car are you looking for? ");
+                        String type = inputScanner.nextLine();
+                        dealership.getVehicleByType(type);
                     case 7:
+                        System.out.println("View all available cars: ");
+                        dealership.getAllVehicles();
                     case 8:
+                        System.out.println("Enter Vehicle Data: ");
+                        System.out.println("Vin number: ");
+                         int vin =  inputScanner.nextInt();
+                        System.out.println("Year: ");
+                         int year = inputScanner.nextInt();
+                        System.out.println("make: ");
+                         String make = inputScanner.nextLine();
+                        System.out.println("model: ");
+                         String model = inputScanner.nextLine();
+                        System.out.println("type: ");
+                         String vehicleType= inputScanner.nextLine();
+                        System.out.println("color: ");
+                         String color= inputScanner.nextLine();
+                        System.out.println("odometer read: ");
+                         int odometer = inputScanner.nextInt();
+                        System.out.println("price: ");
+                         double price = inputScanner.nextDouble();
+                         break;
                     case 9:
                     default:
 
