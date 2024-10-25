@@ -5,9 +5,10 @@ public class Program {
     static Dealership dealership = fileManager.getDealership();
     static UserInterface userInterface = new UserInterface(dealership);
     //static cause we;re gonna have only one of each for now
+
     public static void main(String[] args) {
         userInterface.displayScreen();
-        fileManager.saveDealership(dealership);
+        // fileManager.saveDealership(dealership);
 
     }
 }

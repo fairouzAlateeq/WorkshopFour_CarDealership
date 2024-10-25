@@ -11,7 +11,7 @@ public class UserInterface {
     public UserInterface(Dealership dealership) {
         this.dealership = dealership;
     }
-// init() method abd mkae it static to initilize
+// init() method and mkae it static to initilize
     public static void displayScreen() {
         int command;
 
