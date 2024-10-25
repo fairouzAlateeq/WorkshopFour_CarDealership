@@ -41,8 +41,8 @@ public class Dealership {
 
     public void getVehicleByPrice(double minPrice, double maxPrice){
         for(Vehicle vehicle : inventory){
-            if(vehicle.getPrice()>minPrice && vehicle.getPrice()>maxPrice)
-                System.out.println(vehicle);
+            if(minPrice<= vehicle.getPrice() && maxPrice>= vehicle.getPrice())
+                System.out.println(vehicle.toString());
 
         }
 
@@ -55,7 +55,7 @@ public class Dealership {
     }
     public void getVehicleByYear(int minYear, int maxYear){
         for(Vehicle vehicle :inventory)
-            if(vehicle.getYear()>minYear && vehicle.getYear()<maxYear)
+            if(vehicle.getYear()>=minYear && vehicle.getYear()<=maxYear)
                 System.out.println(vehicle);
 
     }
@@ -69,9 +69,8 @@ public class Dealership {
 
     public void getVehicleByMilage(int minMile, int maxMile){
         for(Vehicle vehicle :inventory)
-            if(minMile>vehicle.getOdometer() && maxMile<vehicle.getOdometer())
+            if(vehicle.getOdometer()>= minMile && vehicle.getOdometer()<=maxMile)
                 System.out.println(vehicle);
-
     }
 
     public void getVehicleByType(String vehicleType){
@@ -82,7 +81,7 @@ public class Dealership {
 
     public void getAllVehicles(){
         for(Vehicle vehicle :inventory)
-            System.out.println(vehicle);
+            System.out.println(vehicle.toString()); // check to see if its returning the actual values or memo location
 
     }
 
@@ -98,5 +97,8 @@ public class Dealership {
 
     }
 
+    public void setInventory(ArrayList<Vehicle> vehicles) {
+        this.inventory = vehicles;
+    }
 
 }

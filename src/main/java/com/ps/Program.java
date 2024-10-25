@@ -1,10 +1,13 @@
 package com.ps;
 
 public class Program {
+    static DealershipFileManager fileManager = new DealershipFileManager();
+    static Dealership dealership = fileManager.getDealership();
+    static UserInterface userInterface = new UserInterface(dealership);
+    //static cause we;re gonna have only one of each for now
     public static void main(String[] args) {
-        DealershipFileManager fileManager = new DealershipFileManager();
-        Dealership dealership1 = new Dealership("dealership", "dallas, tx", "9137493313");
-        UserInterface userInterface = new UserInterface(dealership1);
+        userInterface.displayScreen();
+        fileManager.saveDealership(dealership);
 
     }
 }

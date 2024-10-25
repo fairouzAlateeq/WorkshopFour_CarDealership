@@ -11,8 +11,8 @@ public class UserInterface {
     public UserInterface(Dealership dealership) {
         this.dealership = dealership;
     }
-
-    public void displayScreen() {
+// init() method abd mkae it static to initilize
+    public static void displayScreen() {
         int command;
 
             do {
@@ -71,14 +71,16 @@ public class UserInterface {
                         String type = inputScanner.nextLine();
                         dealership.getVehicleByType(type);
                     case 7:
-                        System.out.println("View all available cars: ");
+                        System.out.println("all available cars: ");
                         dealership.getAllVehicles();
+                        break;
                     case 8:
                         System.out.println("Enter Vehicle Data: ");
                         System.out.println("Vin number: ");
                          int vin =  inputScanner.nextInt();
                         System.out.println("Year: ");
                          int year = inputScanner.nextInt();
+                        inputScanner.nextLine();
                         System.out.println("make: ");
                          String make = inputScanner.nextLine();
                         System.out.println("model: ");
@@ -93,6 +95,7 @@ public class UserInterface {
                          double price = inputScanner.nextDouble();
                          Vehicle newVehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
                          dealership.addVehicle(newVehicle);
+                         DealershipFileManager.saveDealership(dealership);
                          break;
                     case 9:
                         System.out.println("whats the vehicle's vin number? ");
