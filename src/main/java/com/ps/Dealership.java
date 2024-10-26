@@ -56,24 +56,33 @@ public class Dealership {
         }
         return vehicles;
     }
-    public void getVehicleByYear(int minYear, int maxYear){
-        for(Vehicle vehicle :inventory)
+    public static List<Vehicle> getVehicleByYear(int minYear, int maxYear){
+        List<Vehicle> vehicles = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
             if(vehicle.getYear()>=minYear && vehicle.getYear()<=maxYear)
-                System.out.println(vehicle);
-
-    }
-    public void getVehicleByColor(String color){
+                vehicles.add(vehicle);
+        }
+        return vehicles;
+      }
+    public static List<Vehicle> getVehicleByColor(String color){
+        List<Vehicle> vehicles = new ArrayList<>();
         for(Vehicle vehicle :inventory)
             if(color.equalsIgnoreCase(vehicle.getColor()))
-                System.out.println(vehicle);
-
-
+            {
+                vehicles.add(vehicle);
+            }
+        return vehicles;
     }
 
-    public void getVehicleByMilage(int minMile, int maxMile){
+    public static List<Vehicle> getVehicleByMilage(int minMile, int maxMile){
+        List<Vehicle> vehicles = new ArrayList<>();
         for(Vehicle vehicle :inventory)
             if(vehicle.getOdometer()>= minMile && vehicle.getOdometer()<=maxMile)
-                System.out.println(vehicle);
+            {
+                vehicles.add(vehicle);
+            }
+        return vehicles;
+          //  if(vehicle.getOdometer()>= minMile && vehicle.getOdometer()<=maxMile)
     }
 
     public void getVehicleByType(String vehicleType){

@@ -62,19 +62,28 @@ public class UserInterface {
                         int year1 = inputScanner.nextInt();
                         System.out.println("enter your max year: ");
                         int year2 = inputScanner.nextInt();
-                        dealership.getVehicleByYear(year1, year2);
+                        //dealership.getVehicleByYear(year1, year2);
+                        vehicles = Dealership.getVehicleByYear(year1, year2);
+                        for (Vehicle v: vehicles) {
+                            System.out.println(v);
+                        }
                         break;
                     case 4:
                         System.out.println("What color are you looking for? ");
                         String col = inputScanner.nextLine();
-                        dealership.getVehicleByColor(col);
+                        //dealership.getVehicleByColor(col);
+                        vehicles = Dealership.getVehicleByColor(col);
+                        for (Vehicle v: vehicles) {
+                            System.out.println(v);
+                        }
                         break;
                     case 5:
                         System.out.println("min Milage: ");
                         int minMilage = inputScanner.nextInt();
                         System.out.println("max Milage");
                         int maxMilage = inputScanner.nextInt();
-                        dealership.getVehicleByMilage(minMilage,maxMilage);
+                        // dealership.getVehicleByMilage(minMilage,maxMilage);
+
                         break;
                     case 6:
                         System.out.println("What type od car are you looking for? ");
