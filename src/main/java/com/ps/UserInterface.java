@@ -83,15 +83,26 @@ public class UserInterface {
                         System.out.println("max Milage");
                         int maxMilage = inputScanner.nextInt();
                         // dealership.getVehicleByMilage(minMilage,maxMilage);
+                        vehicles = Dealership.getVehicleByMilage(minMilage,maxMilage);
+                        for (Vehicle v: vehicles) {
+                            System.out.println(v);
+                        }
 
                         break;
                     case 6:
                         System.out.println("What type od car are you looking for? ");
                         String type = inputScanner.nextLine();
-                        dealership.getVehicleByType(type);
+                        vehicles = Dealership.getVehicleByType(type);
+                        for (Vehicle v: vehicles) {
+                            System.out.println(v);
+                        }
+                        break;
                     case 7:
                         System.out.println("all available cars: ");
-                        dealership.getAllVehicles();
+                        vehicles = Dealership.getAllVehicles();
+                        for (Vehicle v: vehicles) {
+                            System.out.println(v);
+                        }
                         break;
                     case 8:
                         System.out.println("Enter Vehicle Data: ");
@@ -113,7 +124,7 @@ public class UserInterface {
                         System.out.println("price: ");
                          double price = inputScanner.nextDouble();
                          Vehicle newVehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
-                         dealership.addVehicle(newVehicle);
+                         vehicles.Dealership.addVehicle(newVehicle);
                          DealershipFileManager.saveDealership(dealership);
                          break;
                     case 9:

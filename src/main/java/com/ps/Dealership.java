@@ -82,19 +82,20 @@ public class Dealership {
                 vehicles.add(vehicle);
             }
         return vehicles;
-          //  if(vehicle.getOdometer()>= minMile && vehicle.getOdometer()<=maxMile)
+
     }
 
-    public void getVehicleByType(String vehicleType){
-        for(Vehicle vehicle :inventory)
-            if(vehicle.getVehicleType().equalsIgnoreCase(vehicleType))
-                System.out.println(vehicle);
+    public static List<Vehicle> getVehicleByType(String vehicleType){
+        List<Vehicle> vehicles = new ArrayList<>();
+        for(Vehicle vehicle :inventory) {
+            if (vehicle.getVehicleType().equalsIgnoreCase(vehicleType))
+                vehicles.add(vehicle);
+        }
+        return vehicles;
     }
 
-    public void getAllVehicles(){
-        for(Vehicle vehicle :inventory)
-            System.out.println(vehicle); // check to see if its returning the actual values or memo location
-
+    public static List<Vehicle> getAllVehicles(){
+        return inventory;
     }
 
     public void addVehicle(Vehicle vehicle){
