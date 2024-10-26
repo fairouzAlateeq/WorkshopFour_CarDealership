@@ -1,12 +1,14 @@
 package com.ps;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
 
-    private static Dealership dealership;
+    // private static Dealership dealership;
     private static Scanner commandScanner = new Scanner(System.in);
     private static Scanner inputScanner = new Scanner(System.in);
+    private static List<Vehicle> vehicles;
 
     public UserInterface(Dealership dealership) {
         this.dealership = dealership;
@@ -38,7 +40,11 @@ public class UserInterface {
                         double min = inputScanner.nextDouble();
                         System.out.println("enter your max: ");
                         double max = inputScanner.nextDouble();
-                        dealership.getVehicleByPrice(min, max);
+                        // dealership.getVehicleByPrice(min, max);
+                        vehicles = Dealership.getVehicleByPrice(min, max);
+                        for (int i=0; i<vehicles.size();i++) {
+                            System.out.println(vehicles[i]);
+                        }
                         break;
                     case 2:
                         System.out.println("whats the make? ");

@@ -1,13 +1,14 @@
 package com.ps;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
     private String name;
     private String address;
     private String phone;
 
-    private ArrayList<Vehicle> inventory = new ArrayList<>();
+    private static ArrayList<Vehicle> inventory = new ArrayList<>();
 
     public Dealership(String name, String address, String phone) {
         this.name = name;
@@ -39,15 +40,15 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public void getVehicleByPrice(double minPrice, double maxPrice){
-        for(Vehicle vehicle : inventory){
+    public static List<Vehicle> getVehicleByPrice(double minPrice, double maxPrice){
+        List<Vehicle> vehicles = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
             if(minPrice<= vehicle.getPrice() && maxPrice>= vehicle.getPrice())
-                System.out.println(vehicle.toString());
-
+                vehicles.add(vehicle);
         }
-
+        return vehicles;
     }
-    public void getVehicleByMakeModel(String make, String model){
+    public static void getVehicleByMakeModel(String make, String model){
         for(Vehicle vehicle : inventory) {
             if(make.equalsIgnoreCase(vehicle.getMake()) && model.equalsIgnoreCase(vehicle.getModel()))
                 System.out.println(vehicle);
