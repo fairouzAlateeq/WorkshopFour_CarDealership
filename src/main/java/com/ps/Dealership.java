@@ -48,11 +48,13 @@ public class Dealership {
         }
         return vehicles;
     }
-    public static void getVehicleByMakeModel(String make, String model){
-        for(Vehicle vehicle : inventory) {
+    public static List<Vehicle> getVehicleByMakeModel(String make, String model){
+        List<Vehicle> vehicles = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
             if(make.equalsIgnoreCase(vehicle.getMake()) && model.equalsIgnoreCase(vehicle.getModel()))
-                System.out.println(vehicle);
+                vehicles.add(vehicle);
         }
+        return vehicles;
     }
     public void getVehicleByYear(int minYear, int maxYear){
         for(Vehicle vehicle :inventory)

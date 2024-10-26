@@ -11,7 +11,7 @@ public class UserInterface {
     private static List<Vehicle> vehicles;
 
     public UserInterface(Dealership dealership) {
-        this.dealership = dealership;
+        //this.dealership = dealership;
     }
 // init() method and mkae it static to initilize
     public static void displayScreen() {
@@ -42,8 +42,8 @@ public class UserInterface {
                         double max = inputScanner.nextDouble();
                         // dealership.getVehicleByPrice(min, max);
                         vehicles = Dealership.getVehicleByPrice(min, max);
-                        for (int i=0; i<vehicles.size();i++) {
-                            System.out.println(vehicles[i]);
+                        for (Vehicle v: vehicles) {
+                            System.out.println(v);
                         }
                         break;
                     case 2:
@@ -51,7 +51,11 @@ public class UserInterface {
                         String carMake = inputScanner.nextLine();
                         System.out.println("model? ");
                         String carModel = inputScanner.nextLine();
-                        dealership.getVehicleByMakeModel(carMake, carModel);
+                        // dealership.getVehicleByMakeModel(carMake, carModel);
+                        vehicles = Dealership.getVehicleByMakeModel(carMake, carModel);
+                        for (Vehicle v: vehicles) {
+                            System.out.println(v);
+                        }
                         break;
                     case 3:
                         System.out.println("enter your min year: ");
