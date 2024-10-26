@@ -98,13 +98,11 @@ public class Dealership {
         return inventory;
     }
 
-    public void addVehicle(Vehicle vehicle){
+    public static void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
-
-
     }
 
-    public void removeVehicle(int vin){
+    public static void removeVehicle(int vin){
         for(Vehicle vehicle :inventory)
             if(vehicle.getVin() == vin)
                 inventory.remove(vehicle);

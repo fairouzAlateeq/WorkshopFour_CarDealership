@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
-
-    // private static Dealership dealership;
     private static Scanner commandScanner = new Scanner(System.in);
     private static Scanner inputScanner = new Scanner(System.in);
     private static List<Vehicle> vehicles;
@@ -13,7 +11,7 @@ public class UserInterface {
     public UserInterface(Dealership dealership) {
         //this.dealership = dealership;
     }
-// init() method and mkae it static to initilize
+    // init() method and mkae it static to initilize
     public static void displayScreen() {
         int command;
 
@@ -40,7 +38,7 @@ public class UserInterface {
                         double min = inputScanner.nextDouble();
                         System.out.println("enter your max: ");
                         double max = inputScanner.nextDouble();
-                        // dealership.getVehicleByPrice(min, max);
+
                         vehicles = Dealership.getVehicleByPrice(min, max);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
@@ -51,7 +49,7 @@ public class UserInterface {
                         String carMake = inputScanner.nextLine();
                         System.out.println("model? ");
                         String carModel = inputScanner.nextLine();
-                        // dealership.getVehicleByMakeModel(carMake, carModel);
+
                         vehicles = Dealership.getVehicleByMakeModel(carMake, carModel);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
@@ -62,7 +60,7 @@ public class UserInterface {
                         int year1 = inputScanner.nextInt();
                         System.out.println("enter your max year: ");
                         int year2 = inputScanner.nextInt();
-                        //dealership.getVehicleByYear(year1, year2);
+
                         vehicles = Dealership.getVehicleByYear(year1, year2);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
@@ -71,7 +69,7 @@ public class UserInterface {
                     case 4:
                         System.out.println("What color are you looking for? ");
                         String col = inputScanner.nextLine();
-                        //dealership.getVehicleByColor(col);
+
                         vehicles = Dealership.getVehicleByColor(col);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
@@ -82,7 +80,6 @@ public class UserInterface {
                         int minMilage = inputScanner.nextInt();
                         System.out.println("max Milage");
                         int maxMilage = inputScanner.nextInt();
-                        // dealership.getVehicleByMilage(minMilage,maxMilage);
                         vehicles = Dealership.getVehicleByMilage(minMilage,maxMilage);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
@@ -124,13 +121,14 @@ public class UserInterface {
                         System.out.println("price: ");
                          double price = inputScanner.nextDouble();
                          Vehicle newVehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
-                         vehicles.Dealership.addVehicle(newVehicle);
-                         DealershipFileManager.saveDealership(dealership);
+                         // add to vehicles and save to dealership
+                         Dealership.addVehicle(newVehicle);
+
                          break;
                     case 9:
                         System.out.println("whats the vehicle's vin number? ");
                         int vinToRemove =inputScanner.nextInt();
-                        dealership.removeVehicle(vinToRemove);
+                        Dealership.removeVehicle(vinToRemove);
                         break;
                     case 99:
                         System.out.println("See you next time! ");
