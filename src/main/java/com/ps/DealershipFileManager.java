@@ -10,7 +10,7 @@ public class DealershipFileManager {
 
     public static Dealership getDealership() {
 
-        Dealership dealership;
+        Dealership dealership = null;
 
         ArrayList<Vehicle> vehicles = new ArrayList<>();
 
@@ -45,22 +45,31 @@ public class DealershipFileManager {
                 }
                 reader.close();
                 dealership.setInventory(vehicles); // may have to change it position
-                return dealership; // to make sure an empty dealership isn't returned
+               // return dealership; // to make sure an empty dealership isn't returned
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null; // to make sure an empty dealership isn't returned
+        return dealership; // to make sure an empty dealership isn't returned
     }
 
-    public static void saveDealership(Dealership newDealership) {
-        try (
-                BufferedWriter writer = new BufferedWriter(new FileWriter("testinventory.csv"))) {
-            // 'true' for appending
-            writer.write(newDealership.getName() + "|" + newDealership.getAddress() + "|" + newDealership.getPhone());
-            writer.close();
-            // writer.newLine(); // Add a new line after writing
+    public static void saveDealership(Dealership dealership) {
 
+        try (
+            BufferedWriter writer = new BufferedWriter(new FileWriter("testinventory.csv"))) {
+            // 'true' for appending
+            writer.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
+            writer.newLine();
+            // Write vehicle details
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                writer.write(vehicle.getVin() + "|" + vehicle.getYear() + "|" + vehicle.getMake() + "|" + vehicle.getModel() + "|" +
+                        vehicle.getVehicleType() + "|" + vehicle.getColor() + "|" + vehicle.getOdometer() + "|" + vehicle.getPrice());
+
+                writer.newLine();
+            }
+
+            writer.flush();
+            System.out.println("Dealership and vehicles saved successfully!");
         } catch (IOException e) {
             e.printStackTrace();
         }

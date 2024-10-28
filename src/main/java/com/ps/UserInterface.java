@@ -4,14 +4,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
+
     private static Scanner commandScanner = new Scanner(System.in);
     private static Scanner inputScanner = new Scanner(System.in);
     private static List<Vehicle> vehicles;
+    private static Dealership dealership;
 
     public UserInterface(Dealership dealership) {
-        //this.dealership = dealership;
+        this.dealership = dealership;
     }
     // init() method and mkae it static to initilize
+    public static void init(){
+        //Loading the dealership and inventory from a file
+        dealership = DealershipFileManager.getDealership();
+    }
+    //helper method // dispalayvehicles
     public static void displayScreen() {
         int command;
 
@@ -38,7 +45,6 @@ public class UserInterface {
                         double min = inputScanner.nextDouble();
                         System.out.println("enter your max: ");
                         double max = inputScanner.nextDouble();
-
                         vehicles = Dealership.getVehicleByPrice(min, max);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
@@ -50,7 +56,7 @@ public class UserInterface {
                         System.out.println("model? ");
                         String carModel = inputScanner.nextLine();
 
-                        vehicles = Dealership.getVehicleByMakeModel(carMake, carModel);
+                        vehicles = dealership.getVehicleByMakeModel(carMake, carModel);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
                         }
@@ -61,7 +67,7 @@ public class UserInterface {
                         System.out.println("enter your max year: ");
                         int year2 = inputScanner.nextInt();
 
-                        vehicles = Dealership.getVehicleByYear(year1, year2);
+                        vehicles = dealership.getVehicleByYear(year1, year2);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
                         }
@@ -70,7 +76,7 @@ public class UserInterface {
                         System.out.println("What color are you looking for? ");
                         String col = inputScanner.nextLine();
 
-                        vehicles = Dealership.getVehicleByColor(col);
+                        vehicles = dealership.getVehicleByColor(col);
                         for (Vehicle v: vehicles) {
                             System.out.println(v);
                         }
@@ -122,7 +128,8 @@ public class UserInterface {
                          double price = inputScanner.nextDouble();
                          Vehicle newVehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
                          // add to vehicles and save to dealership
-                         Dealership.addVehicle(newVehicle);
+                         dealership.addVehicle(newVehicle);
+                        // DealershipFileManager.saveDealership();
 
                          break;
                     case 9:

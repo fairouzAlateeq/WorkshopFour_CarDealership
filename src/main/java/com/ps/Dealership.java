@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dealership {
-    private String name;
-    private String address;
-    private String phone;
+    private static String name;
+    private static String address;
+    private static String phone;
 
     private static ArrayList<Vehicle> inventory = new ArrayList<>();
 
     public Dealership(String name, String address, String phone) {
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
+        Dealership.name = name;
+        Dealership.address = address;
+        Dealership.phone = phone;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -24,7 +24,7 @@ public class Dealership {
         this.name = name;
     }
 
-    public String getAddress() {
+    public static String getAddress() {
         return address;
     }
 
@@ -32,7 +32,7 @@ public class Dealership {
         this.address = address;
     }
 
-    public String getPhone() {
+    public static String getPhone() {
         return phone;
     }
 
@@ -66,11 +66,11 @@ public class Dealership {
       }
     public static List<Vehicle> getVehicleByColor(String color){
         List<Vehicle> vehicles = new ArrayList<>();
-        for(Vehicle vehicle :inventory)
-            if(color.equalsIgnoreCase(vehicle.getColor()))
-            {
+        for(Vehicle vehicle :inventory) {
+            if (color.equalsIgnoreCase(vehicle.getColor()))
                 vehicles.add(vehicle);
-            }
+
+        }
         return vehicles;
     }
 
@@ -98,19 +98,20 @@ public class Dealership {
         return inventory;
     }
 
-    public static void addVehicle(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
+        DealershipFileManager.saveDealership(this);
     }
 
     public static void removeVehicle(int vin){
-        for(Vehicle vehicle :inventory)
-            if(vehicle.getVin() == vin)
+        for(Vehicle vehicle :inventory) {
+            if (vehicle.getVin() == vin)
                 inventory.remove(vehicle);
-
+        }
     }
 
     public void setInventory(ArrayList<Vehicle> vehicles) {
-        this.inventory = vehicles;
+        inventory = vehicles;
     }
 
 }
